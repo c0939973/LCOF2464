@@ -2,81 +2,78 @@
   Author: Sushil Kumar Thanet
   Date: Oct 4,2024
   File Name: styles.css
-  */
+*/
 
-  /* CSS Reset */
-  body, header, nav, main, footer, img, h1 {
+/* CSS Reset */
+body, header, nav, main, footer, img, h1 {
     margin: 0;
     padding: 0;
     border: 0;
-  }
+    background-color:#baafa6;
+}
 
-  /* Style rule for images */
-  img {
+img {
     max-width: 100%;
     display: block;
 }
 
-/* Style rules for header content */
+/* Style rules for Header and logo */
 header {
-    text-align: center;
-    font-size: 3em;
-    color: #373684;
+    margin: 0;
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+    background-color: #baafa6;
+    /* height: 190px; */
 }
 
-header h1 {
-    font-style: italic;
+header img {
+    margin: 0 auto;
+    height: 100%;
+
+    border-radius: 50%;
 }
 
 /* Style rules for navigation area */
 nav {
-   background-image: linear-gradient(to right, white, #0187cb, #44b8bc);
+    margin: 0;
+	padding: 1%;
+    margin-bottom: 1%;
+    background-color:#baafa6;
 }
+
 nav ul {
     list-style-type: none;
-margin: 0;
     text-align: center;
+    padding-left: 0;
 }
+
 nav li {
-    display: inline-block;
-    font-size: 2em;
+    /* padding: 0 3em; */
+    font-size: 1.5em;
+    font-family: 'Francois One', sans-serif;
+    border-top: 1px solid black;
+   
 }
+
+nav li:first-child {
+    border-top: none;
+}
+
 nav li a {
+   
     display: block;
-    color: #fff;
-    text-align: center;
+    color:black;
     padding: 0.5em 1em;
     text-decoration: none;
 }
 
-/* Style rules for main content */
-main {
-    padding: 2%;
-    background-color: #e5e9fc;
-    overflow: auto;
-    font-family: Verdana, Arial, sans-serif;
-}
-main p {
-    font-size: 1.25em;
-}
-.action {
-    font-size: 1.75em;
-    color: #373684;
-    font-weight: bold;
+nav li a:hover{
+    color: white;
+    background-color: black;
 }
 
-#piano, #guitar, #violin {
-    width: 29%;
-float: left;
-    margin: 0 2%;
-}
-
-#info {
-    clear: left;
-    background-color: #c0caf7;
-    padding: 1% 2%;
-}
-
+/* concat page style-rules */
 #contact {
     text-align: center;
 }
@@ -105,4 +102,89 @@ footer a {
     text-decoration: none;
 }
 
+/* defining the media querry for tablet viewport */
 
+
+@media screen and (min-width:630px), print {
+
+    /* tabled viewport: style rule for header */
+
+    header{
+        position: static;
+        padding-bottom: 2%;
+        /* width: 25%; */
+    }
+    
+    nav li{
+        border-top: none;
+        display: inline-block;
+        
+       
+    }
+    nav li:last-child{
+        border-right: none;
+    }
+    nav li a{
+        padding: 0.1em 0.75em;
+    }
+
+
+   
+}
+
+@media screen and (min-width:769px), print {
+    header {
+        width: 25%;
+        float: left;
+        padding-bottom: 0;
+        /* margin-top: 0; */
+    }
+    nav {
+        /* float: right; */
+        width: 100%;
+        padding: 4em 0 0 0;
+    }
+    nav ul {
+        text-align: right;
+        
+    }
+
+    nav li{
+        border: none;
+    }
+    nav li a {
+        padding: 0.5em 1em;
+    }
+
+    main{
+        clear: left;
+    }
+
+
+
+}
+
+@media screen and(min-width:1029px), print{
+    nav {
+        /* float: right; */
+        /* width: 100%; */
+        padding: 10em 0 0 0;
+    }
+    
+}
+
+@media screen and (min-width:1921px) {
+   #container{
+       width: 1920px;
+       margin: 0 auto;
+
+   }
+
+}
+
+@media print{
+    body{
+        background-color: white;
+        color: black;
+    }  
+}
