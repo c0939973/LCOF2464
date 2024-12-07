@@ -1,190 +1,515 @@
-/*
-  Author: Sushil Kumar Thanet
-  Date: Oct 4,2024
-  File Name: styles.css
-*/
-
-/* CSS Reset */
-body, header, nav, main, footer, img, h1 {
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    border: 0;
-    background-color:#baafa6;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* Style rules for Header and logo */
 header {
-    margin: 0;
-    position: -webkit-sticky; 
-    position: sticky;
-    top: 0;
-    background-color: #baafa6;
-    /* height: 190px; */
-}
-
-header img {
-    margin: 0 auto;
-    height: 100%;
-
-    border-radius: 50%;
-}
-
-/* Style rules for navigation area */
-nav {
-    margin: 0;
-	padding: 1%;
-    margin-bottom: 1%;
-    background-color:#baafa6;
-}
-
-nav ul {
-    list-style-type: none;
+    padding: 20px 0;
     text-align: center;
-    padding-left: 0;
-}
-
-nav li {
-    /* padding: 0 3em; */
-    font-size: 1.5em;
-    font-family: 'Francois One', sans-serif;
-    border-top: 1px solid black;
    
 }
 
-nav li:first-child {
-    border-top: none;
+#banner, .product-image, .sale-image, .guarantee-image {
+    width: 100%;
+    max-width: 100%; /* Ensure they don’t exceed container width */
+    height: 350px; /* Maintain aspect ratio */
 }
 
-nav li a {
-   
-    display: block;
-    color:black;
-    padding: 0.5em 1em;
-    text-decoration: none;
+
+ nav {
+    background-color: #4a90e2;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
 }
 
-nav li a:hover{
+.nav-link {
     color: white;
-    background-color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-/* concat page style-rules */
-#contact {
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack the links vertically on smaller screens */
+    }
+
+    .nav-link {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+}
+
+
+.nav-link:hover {
+    background-color: #20c997;
+    color: white;
+    transform: scale(1.1);
+}
+
+.nav-link.active {
+    background-color: #ffffff;
+    color: #4a90e2;
+    font-style: italic;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    color: #4a90e2;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.cta-btn {
+    background-color: #20c997;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #17a085;
+}
+
+.features {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.features h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
     text-align: center;
 }
 
-#contact a {
-    color: #4645a8;
-    text-decoration: none;
+.feature-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.testimonial {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.testimonial h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* Specials Page Section Styles */
+
+/* General Fade-in/Out Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Product of the Week */
+.product-of-week {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f0f4f8;
+    margin-top: 20px;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-out forwards; /* Fade-in effect */
+}
+
+.product-of-week h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.product-of-week p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.product-image {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* Weekly Sales Section */
+.weekly-sales {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.weekly-sales h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+.sales-cards {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
+    gap: 20px;
+}
+
+
+.sales-card {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+}
+.sales-card:hover{
+    transform: translate(0, -2ex);
+}
+
+@media (max-width: 768px) {
+    .sales-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sales-cards {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}
+
+
+/* Customer Guarantee Section */
+.customer-guarantee {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.customer-guarantee p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.customer-guarantee strong {
     font-weight: bold;
 }
 
-.map {
-    border: 5px solid #373684;
-    height: 350px;
-    width: 600px;
+.guarantee-image {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
-/* Style rules for footer content */
-footer {
+/* Reasons to Buy Section */
+.reasons-to-buy {
+    padding: 40px 20px;
+    background-color: #f0f4f8;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.reasons-to-buy h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.reasons-to-buy ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reasons-to-buy li {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 15px 0;
+}
+
+.reasons-to-buy li img {
+    width: 40px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Product of the Week */
+.product-of-week {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 0.65em;
-    clear: left;
 }
 
-footer a {
-    color: #4645a8;
-    text-decoration: none;
+.product-of-week h2 {
+    color: #007bff;
+    margin-bottom: 10px;
 }
 
-/* defining the media querry for tablet viewport */
+.product-of-week p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
 
+.product-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 15px 0;
+}
 
-@media screen and (min-width:630px), print {
+/* Weekly Sales Section */
+.weekly-sales {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
 
-    /* tabled viewport: style rule for header */
+.weekly-sales h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-    header{
-        position: static;
-        padding-bottom: 2%;
-        /* width: 25%; */
-    }
-    
-    nav li{
-        border-top: none;
-        display: inline-block;
-        
-       
-    }
-    nav li:last-child{
-        border-right: none;
-    }
-    nav li a{
-        padding: 0.1em 0.75em;
-    }
+.sales-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 
+.sales-card {
+    width: 30%;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+.sales-card img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.sales-card p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Customer Guarantee Section */
+.customer-guarantee {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.customer-guarantee p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.customer-guarantee strong {
+    color: #28a745;
+}
+
+.guarantee-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 15px 0;
+}
+
+/* Reasons to Buy Section */
+.reasons-to-buy {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.reasons-to-buy h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reasons-to-buy ul {
+    list-style-type: square;
+    padding-left: 20px; 
+}
+
+.reasons-to-buy li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.reasons-to-buy img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.audio-section,
+.media-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+video
+ {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+audio
+ {
+    width: 100%;
+    border-radius: 8px;
    
 }
 
-@media screen and (min-width:769px), print {
-    header {
-        width: 25%;
-        float: left;
-        padding-bottom: 0;
-        /* margin-top: 0; */
-    }
-    nav {
-        /* float: right; */
-        width: 100%;
-        padding: 4em 0 0 0;
-    }
-    nav ul {
-        text-align: right;
-        
-    }
-
-    nav li{
-        border: none;
-    }
-    nav li a {
-        padding: 0.5em 1em;
-    }
-
-    main{
-        clear: left;
-    }
-
-
-
+footer {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
 
-@media screen and(min-width:1029px), print{
-    nav {
-        /* float: right; */
-        /* width: 100%; */
-        padding: 10em 0 0 0;
+footer a {
+    color: #4be851;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Devices (Portrait) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
     }
-    
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 }
 
-@media screen and (min-width:1921px) {
-   #container{
-       width: 1920px;
-       margin: 0 auto;
+/* Tablets */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
 
-   }
-
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
 
-@media print{
-    body{
-        background-color: white;
-        color: black;
-    }  
+/* Desktops */
+@media (min-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }

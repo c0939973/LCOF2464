@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    Author: Sushil Kumar Thanet
+    Student Number: c0939973
+    Description: contacts page for the Refrigerator Online Shop website
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Refrigerator Online Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="images/banner/banner4.jpg" alt="Refrigerator Online Shop Banner" id="banner">
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="team.html" class="nav-link">Our Team</a>
+        <a href="specials.html" class="nav-link">Specials</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="media.html" class="nav-link">Media</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+    </nav>
+
+    <main>
+        <div id="heading">
+            <h1>Contact Us</h1>
+        <p>Please fill in the form below to get in touch with us.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form action="submit_form.php" method="post" class="contact-form">
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <ol>
+                    <li>
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required autofocus size="40">
+                    </li>
+                    <li>
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required size="40">
+                    </li>
+                    <li>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Your message here" required rows="4" cols="40"></textarea>
+                    </li>
+                    <li>
+                        <label>Preferred Contact Method:</label><br>
+                        <input type="radio" id="phone" name="contact_method" value="phone">
+                        <label for="phone">Phone</label><br>
+                        <input type="radio" id="email_contact" name="contact_method" value="email" checked>
+                        <label for="email_contact">Email</label>
+                    </li>
+                    <li>
+                        <label for="subscribe">Subscribe to our newsletter:</label>
+                        <input type="checkbox" id="subscribe" name="subscribe">
+                    </li>
+                    <li>
+                        <label for="preferred_date">Preferred Contact Date:</label>
+                        <input type="date" id="preferred_date" name="preferred_date" required>
+                    </li>
+                    <li>
+                        <label for="inquiry_type">Inquiry Type:</label>
+                        <select id="inquiry_type" name="inquiry_type" required>
+                            <option value="product">Product Inquiry</option>
+                            <option value="shipping">Shipping Inquiry</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="submit">Submit Request</button>
+                        <button type="reset">Reset Form</button>
+                    </li>
+                </ol>
+            </fieldset>
+        </form>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Copyright 2024. All Rights Reserved.</p>
+        <p><a href="mailto:info@refrigeratorshop.com">Request information</a></p>
+        <p>Sushil Thanet &nbsp; &nbsp; C0939973</p>
+    </footer>
+</body>
+
+</html>

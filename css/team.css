@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3{
+    color: #4a90e2;
+}
+
+/* Team Section */
+.team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for large screens */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.team-wrapper {
+    margin: 20px auto;
+}
+
+.team-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect on hover */
+}
+
+.team-photo:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mobile (Small Devices) */
+@media screen and (max-width: 768px) {
+    .team {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+
+    .team-photo {
+        width: 150px; /* Adjust image size for smaller screens */
+        height: 150px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}

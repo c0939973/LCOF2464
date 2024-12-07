@@ -1,0 +1,101 @@
+h1,h2{
+    color:#4a90e2;
+}
+.reasons-to-shop {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reasons-to-shop ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reasons-to-shop li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.reasons-to-shop li::before {
+    content: "✔";
+    color: #28a745;
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.reasons-to-shop li:hover {
+    background-color: #eaf7e5;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Mobile (Small Devices) */
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    .reasons-to-shop li {
+        font-size: 16px;
+    }
+}
+
+/* Tablet (Medium Devices) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    nav a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .content-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .reasons-to-shop li {
+        font-size: 18px;
+    }
+}
+
+/* Desktop (Large Devices) */
+@media screen and (min-width: 1025px) {
+    nav a {
+        font-size: 16px;
+        margin: 0 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .content-container {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .reasons-to-shop li {
+        font-size: 20px;
+    }
+}
